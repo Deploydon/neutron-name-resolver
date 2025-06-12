@@ -1,0 +1,35 @@
+{
+  "name": "neutron-name-resolver",
+  "version": "1.0.0",
+  "description": "Resolve Neutron Addresses to Neutron.Names, and vice-versa.",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deploydon/neutron-name-resolver.git"
+  },
+  "author": "Deploydon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/deploydon/neutron-name-resolver/issues"
+  },
+  "homepage": "https://github.com/deploydon/neutron-name-resolver#readme",
+  "dependencies": {
+    "@cosmjs/cosmwasm-stargate": "^0.32.0",
+    "@cosmjs/proto-signing": "^0.32.0",
+    "@cosmjs/stargate": "^0.32.0"
+  },
+  "peerDependencies": {
+    "react": ">=16.8.0"
+  },
+  "keywords": [
+    "neutron",
+    "cosmos",
+    "cosmwasm",
+    "blockchain",
+    "names",
+    "resolver"
+  ]
+}
