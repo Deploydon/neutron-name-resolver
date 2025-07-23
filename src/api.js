@@ -18,6 +18,22 @@ async function reverseLookup(address, rpc) {
   }
 }
 
+async function resolveName(name, rpc) {
+  if (!name) {
+    throw new Error("Name is required");
+  }
+  
+  try {
+    const readClient = await getReadOnlyClient(rpc);
+    const state = await readClient.queryContractSmart(CONTRACT, {
+      resolve: { name: name },
+    });
+    return state;
+  } catch (err) {
+    console.error("Resolve name error:", err);
+    throw err;
+  }
+}
 async function bulkReverseLookup(addresses, rpc) {
   if (!addresses || !Array.isArray(addresses) || addresses.length === 0) {
     throw new Error("Addresses array is required and must not be empty");
@@ -38,4 +54,5 @@ async function bulkReverseLookup(addresses, rpc) {
 module.exports = {
   reverseLookup,
   bulkReverseLookup,
+  resolveName
 }; 
