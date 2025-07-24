@@ -13,7 +13,7 @@ async function reverseLookup(address, rpc) {
     });
     return state;
   } catch (err) {
-    console.error("Reverse lookup error:", err);
+    //console.error("Reverse lookup error:", err);
     return null;
   }
 }
@@ -30,7 +30,7 @@ async function resolveName(name, rpc) {
     });
     return state;
   } catch (err) {
-    console.error("Resolve name error:", err);
+  //  console.error("Resolve name error:", err);
     return null;
   }
 }
@@ -46,7 +46,7 @@ async function bulkReverseLookup(addresses, rpc) {
     });
     return state;
   } catch (err) {
-    console.error("Bulk reverse lookup error:", err);
+   // console.error("Bulk reverse lookup error:", err);
     return null;
   }
 }
