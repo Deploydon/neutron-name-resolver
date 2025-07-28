@@ -1,15 +1,18 @@
-const { reverseLookup, bulkReverseLookup } = require('./src/index');
+const { reverseLookup, bulkReverseLookup, resolveName } = require('./src/index');
 
 async function runTests() {
-  const testAddress = "neutron1m9l358xunhhwds0568za49mzhvuxx9ux8xafx3";
+  const testAddress = "neutron167ucsyj55sxh3vfsa000qs27vddepl0yyrwuww";
   const testAddresses = [
     "neutron1m9l358xunhhwds0568za49mzhvuxx9ux8xafx2",
-    "neutron1swap4q9fu42f2l5sm9qwneu62rl9zmx473wy6q",
-    "neutron1gay5y8ek556xx2zucjhdvsdt5g5hynq8ey8k94"
+    "neutron167ucsyj55sxh3vfsa000qs27vddepl0yyrwuww"
   ];
 
   const singleResult = await reverseLookup(testAddress);
   console.log(`${testAddress} --> ${singleResult || 'NONE'}`);
+
+
+  const nameResult = await resolveName("Deploydon");
+  console.log("Name result:", nameResult);
   
   console.log("Bulk Reverse Lookup:")
   const bulkResults = await bulkReverseLookup(testAddresses);
